@@ -1,29 +1,26 @@
 "use client";
 
-import './globals.css'
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import Navbar from './navbar'
-import { useState } from 'react'
+import "./globals.css";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import Navbar from "./navbar";
+import { useState } from "react";
+import { usePathname } from "next/navigation";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
+const disableNavbar = ["/login", "/register"];
 
-
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   const [state, setState] = useState(0);
+  const pathname = usePathname();
   return (
     <html lang="en">
       <body className={inter.className}>
-        {/* <Navbar></Navbar> */}
+        {!disableNavbar.includes(pathname) && <Navbar />}
         {/* <div>Hello World {state}</div> */}
         {/* <button onClick={() => setState(state + 1)}>Klik</button> */}
         {children}
       </body>
     </html>
-  )
+  );
 }
