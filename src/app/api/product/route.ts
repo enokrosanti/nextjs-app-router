@@ -3,13 +3,15 @@ import { NextRequest, NextResponse } from "next/server";
 const data = [
   {
     id: 1,
-    name: "Sepatu",
-    price: 1000000,
+    title: "Sepatu Run 72",
+    price: 1100000,
+    image: "https://www.adidas.co.id/media/catalog/product/cache/da73f7d26ad11f1980ada40c1f6e78fa/i/h/ih8602_2_footwear_photography_side20lateral20view_grey.jpg",
   },
   {
     id: 2,
-    name: "Sepatu2",
-    price: 2000000,
+    title: "Sepatu SL 72 OG",
+    price: 1600000,
+    image: "https://www.adidas.co.id/media/catalog/product/cache/da73f7d26ad11f1980ada40c1f6e78fa/j/h/jh7394_2_footwear_photography_side20lateral20view_grey.jpg",
   },
 ];
 
